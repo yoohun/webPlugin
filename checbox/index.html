@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带文字的开关</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/checkbox1.js"></script>
+    <link rel="stylesheet" href="checkbox.css">
+</head>
+<body style="display: flex;justify-content: center;align-items: center;height: 600px">
+    <!--<div class="textCheckbox" id="ipt">-->
+        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
+        <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
+    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
+    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
+    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
+    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
+    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
+    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
+        <!--<div class="boxDiv">-->
+            <!--<div class="boxPoint boxPointNff"></div>-->
+            <!--<div class="boxOn ">是</div>-->
+            <!--<div class="boxOff">否</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div id="abc" style="height: 100px; width: 100px;border: 1px solid gray;">
+        <div id="one"></div>
+        <div id="two"></div>
+    </div>
+    <script>
+            $(document).ready(function(e) {
+                // input初始化
+                $('input').initCheckbox();
+            });
+            console.log($(".pluginCheckbox"))
+
+        var a =0;
+        var b = 1;
+        $("#abc").on('click', function () {
+            if(a){
+                $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
+            } else {
+                $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
+            }
+            if(b){
+                $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
+            } else {
+                $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
+            }
+            $('#abc input').initCheckbox();
+            $("#abc").off("click");
+            // a==1?  $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
+            // b==1?  $("#two").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
+
+        })
+
+    </script>
+</body>
+</html>
