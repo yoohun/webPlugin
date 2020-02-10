@@ -6,17 +6,30 @@
     <script src="js/jquery.js"></script>
     <script src="js/checkbox1.js"></script>
     <link rel="stylesheet" href="checkbox.css">
+    <style>
+        .dv{
+            width: 100%;
+            margin: 20px;
+        }
+    </style>
 </head>
-<body style="display: flex;justify-content: center;align-items: center;height: 600px">
+<body >
     <!--<div class="textCheckbox" id="ipt">-->
-        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
-        <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
-    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
-    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
-    <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">
-    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
-    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
-    <input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">
+    <div class="dv">
+        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOff" id="a">
+    </div>
+    <div class="dv">
+        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOff" >
+
+    </div>
+
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">-->
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">-->
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOn">-->
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">-->
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">-->
+    <!--<input type="checkbox" class="tCheckbox pluginCheckbox b" name="checboxOff">-->
+    <button id="btn">点击获取所有input的状态</button>
         <!--<div class="boxDiv">-->
             <!--<div class="boxPoint boxPointNff"></div>-->
             <!--<div class="boxOn ">是</div>-->
@@ -29,31 +42,55 @@
         <div id="two"></div>
     </div>
     <script>
-            $(document).ready(function(e) {
-                // input初始化
-                $('input').initCheckbox();
-            });
-            console.log($(".pluginCheckbox"))
+            // $(document).ready(function(e) {
+            // });
+            
+            //     // input初始化
+            $('input').initCheckbox();
+            // // console.log($(".pluginCheckbox"))
+            // console.log($("#a").getCheckboxStatus());
+            // console.log($("#b").getCheckboxStatus());
+            // console.log($("input"))
+            // var arr = $('input')
+            // for(var i=0;i<arr.length;i++){
+            //     console.log( i +" " + $(arr[i]).getCheckboxStatus());
+            // }
+            // console.log($("#a").attr("name"))
+            // console.log($("#a").attr("name") == "checboxOn" ? true : false)
 
-        var a =0;
-        var b = 1;
-        $("#abc").on('click', function () {
-            if(a){
-                $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
-            } else {
-                $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
-            }
-            if(b){
-                $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
-            } else {
-                $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
-            }
-            $('#abc input').initCheckbox();
-            $("#abc").off("click");
-            // a==1?  $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
-            // b==1?  $("#two").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
+            $("#btn").on("click", function () {
+                var arr = $('input')
+                for(var i=0;i<arr.length;i++){
+                    // 获取到checkbox的状态内容
+                    console.log( i +" " + $(arr[i]).getCheckboxStatus());
+                }
+            })
 
-        })
+        // var a =0;
+        // var b = 1;
+        //
+        // //  信息的复现的时候 对checkbox的初始化 判断数据获取相对应的checkbox样式
+        // $("#abc").on('click', function () {
+        //     console.log($("#a").attr("name") == "checboxOn" ? true : false)
+        //     console.log($("#b").attr("name") == "checboxOn" ? true : false)
+        //
+        //
+        //     if(a){
+        //         $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
+        //     } else {
+        //         $("#one").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
+        //     }
+        //     if(b){
+        //         $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">')
+        //     } else {
+        //         $("#two").html('<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">')
+        //     }
+        //     $('#abc input').initCheckbox();
+        //     $("#abc").off("click");
+        //     // a==1?  $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
+        //     // b==1?  $("#two").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOff">' : $("#one").innerHTML = '<input type="checkbox" class="tCheckbox pluginCheckbox" name="checboxOn">'
+        //
+        // })
 
     </script>
 </body>
