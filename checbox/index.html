@@ -16,10 +16,10 @@
 <body >
     <!--<div class="textCheckbox" id="ipt">-->
     <div class="dv">
-        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOff" id="a">
+        <input type="checkbox" class="pluginCheckbox" name="checkboxOn">
     </div>
     <div class="dv">
-        <input type="checkbox" class="tCheckbox pluginCheckbox a" name="checboxOff" >
+        <input type="checkbox" class="pluginCheckbox" name="checkboxOff" >
 
     </div>
 
@@ -42,11 +42,11 @@
         <div id="two"></div>
     </div>
     <script>
-            // $(document).ready(function(e) {
-            // });
-            
-            //     // input初始化
-            $('input').initCheckbox();
+            $(document).ready(function(e) {
+                $('input').initCheckbox();
+            });
+                // input初始化
+
             // // console.log($(".pluginCheckbox"))
             // console.log($("#a").getCheckboxStatus());
             // console.log($("#b").getCheckboxStatus());

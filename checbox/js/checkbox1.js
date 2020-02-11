@@ -7,8 +7,8 @@
                 $(this).parent().find(".boxPoint").addClass("boxPointNff");
                 $(this).parent().find(".boxDiv").addClass("boxDivOn")
                 $(this).parent().find(".boxOn").removeClass("boxOnHide");
-                // $(this).attr("name", "checboxOn");
-                $(this).parent().find("input").attr("name", "checboxOn");
+                // $(this).attr("name", "checkboxOn");
+                $(this).parent().find("input").attr("name", "checkboxOn");
             })
             return true;
         }
@@ -18,7 +18,7 @@
                 $(this).parent().find(".boxPoint").removeClass("boxPointNff");
                 $(this).parent().find(".boxDiv").removeClass("boxDivOn");
                 $(this).parent().find(".boxOn").addClass("boxOnHide");
-                $(this).parent().find("input").attr("name", "checboxOff");
+                $(this).parent().find("input").attr("name", "checkboxOff");
             })
             return true;
         }
@@ -33,7 +33,7 @@
                     "<div class='boxOn'>是</div>" +
                     "<div class='boxOff'>否</div>" +
                     "</div>");
-                if($(this).attr("name") == "checboxOn"){
+                if($(this).attr("name") == "checkboxOn"){
                     $(this).parent().find(".boxOff").addClass("boxOffHide");
                     $(this).parent().find(".boxPoint").addClass("boxPointNff");
                     $(this).parent().find(".boxDiv").addClass("boxDivOn");
@@ -47,7 +47,7 @@
 
     //获取checkbox的状态值
     $.fn.getCheckboxStatus = function () {
-        return $(this).attr("name") == "checboxOn" ? true : false
+        return $(this).attr("name") == "checkboxOn" ? true : false
     }
 
     $(document).ready(function() {
